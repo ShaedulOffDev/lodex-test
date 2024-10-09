@@ -36,3 +36,11 @@ body{
 .swiper-pagination {
   bottom: 15px !important; 
 }
+
+.product-image:hover .product-image__info{
+  display: flex !important;
+}
+
+.navbar a:hover{
+  color: #0FA245 !important;
+}

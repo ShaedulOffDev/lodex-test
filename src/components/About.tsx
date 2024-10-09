@@ -2,9 +2,9 @@ import { AboutImage1, AboutImage2, AboutImage3, AboutImage4, AboutImage5 } from 
 
 const About = () => {
   return (
-    <div className="bg-[#F7F8F7]">
+    <div className="bg-[#F7F8F7] text-center">
       <div className="container flex justify-center items-center py-10">
-        <ul className="flex justify-center gap-12 items-center">
+        <ul className="grid justify-center grid-cols-5 max-lg:grid-cols-3 max-sm:grid-cols-2 max-[350px]:grid-cols-1 gap-12 items-center">
           <li className="flex justify-center flex-col items-center gap-2">
             <img src={AboutImage1} alt="about image" />
             <p className="font-[800] text-sm">Шоу-рум с хитами продаж!</p>
