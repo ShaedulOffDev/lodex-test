@@ -4,9 +4,24 @@ import { useEffect, useState } from "react"
 
 const App = () => {
   const [loading, setLoading] = useState(true)
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisibility = () => {
+    if (window.pageYOffset > 500) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
 
   useEffect(() => {
     window.addEventListener('load', () => setLoading(false))
+  }, [])
+
+  useEffect(() => {
+    window.addEventListener('load', () => setLoading(false))
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
   }, [])
   if(loading){
     return (
@@ -23,6 +38,9 @@ const App = () => {
         <Route path="/products/:token" element={<ProductDetails/>}/>
       </Routes>
       <Footer/>
+      <button className={`fixed z-[99999] end-10 bottom-10 bg-gray-200 px-4 py-2 rounded text-xl text-primary opacity-50 hover:opacity-100 transition-all ${!isVisible && 'hidden'}`} onClick={() => window.scrollTo(0,0)}>
+        <i className="fa fa-arrow-up-long"></i>
+      </button>
     </div>
   )
 }

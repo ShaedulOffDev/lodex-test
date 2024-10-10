@@ -5,6 +5,7 @@ import Products from "./Products/Products";
 import Partners from "./Partners";
 import Instagram from "./Instagram";
 import { products } from "../data";
+import Blog from "./Blog/Blog";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <Products title={"Популярное"} products={products.slice(10, 20)}/>
       <Products title={"Распродажа"} products={products.slice(20, 30)}/>
       <Instagram/>
+      <Blog/>
     </div>
   );
 };

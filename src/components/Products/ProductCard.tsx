@@ -12,11 +12,14 @@ const ProductCard: FC<PropsTypes> = ({ product }) => {
   function formatNumber(number: number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   }
+  const getRandomNumber = () => {
+    return Math.floor(Math.random() * 150)
+  }
   return (
     <div className="p-5 max-lg:p-3">
       {product && (
         <div className="w-full">
-          <div className="w-full aspect-[3/4] relative product-image bg-gray-100">
+          <div className="w-full aspect-[3/4] max-sm:aspect-none max-sm:h-[350px] relative product-image bg-gray-100">
             <Link to={`products/${product.token}`}>
               <img
                 className="w-full h-full object-contain"
@@ -120,6 +123,13 @@ const ProductCard: FC<PropsTypes> = ({ product }) => {
                 </span>
               </span>
             )}
+            <div className="justify-center flex items-center gap-3 max-lg:gap-2 mt-5">
+              <span className="text-primary bg-[#F7F8F7] px-2 py-1 text-sm max-lg:text-[10px] max-lg:px-2 max-lg:py-0">{getRandomNumber()}</span>
+              <span className="text-primary bg-[#F7F8F7] px-2 py-1 text-sm max-lg:text-[10px] max-lg:px-2 max-lg:py-0">{getRandomNumber()}</span>
+              <span className="text-primary bg-[#F7F8F7] px-2 py-1 text-sm max-lg:text-[10px] max-lg:px-2 max-lg:py-0">{getRandomNumber()}</span>
+              <span className="text-primary bg-[#F7F8F7] px-2 py-1 text-sm max-lg:text-[10px] max-lg:px-2 max-lg:py-0">{getRandomNumber()}</span>
+              <span className="text-primary bg-[#F7F8F7] px-2 py-1 text-sm max-lg:text-[10px] max-lg:px-2 max-lg:py-0">{getRandomNumber()}</span>
+            </div>
           </div>
         </div>
       )}

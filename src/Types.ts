@@ -32,3 +32,13 @@ export interface ProductDetailsI {
   sotuv_shakli: string;
   views: number;
 }
+
+export interface BlogI {
+  id: number,
+  title: string,
+  descriptions: string,
+  comments_count: number,
+  views: number,
+  created_at: string,
+  image: string,
+}
