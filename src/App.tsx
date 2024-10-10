@@ -15,6 +15,9 @@ const App = () => {
   };
 
   useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 1500);
     window.addEventListener('load', () => setLoading(false))
   }, [])
 
