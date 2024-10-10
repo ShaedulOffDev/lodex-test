@@ -13,6 +13,7 @@ const ProductDetails = () => {
   const [product, setProduct] = useState<ProductDetailsI | null>(null);
   const [images, setImages] = useState<string[]>([]);
   const [active, setActive] = useState<string>("");
+  const [like, setLike] = useState<boolean>(product ? product.is_favorite : false);
 
   useEffect(() => {
     if (token) {
@@ -24,6 +25,7 @@ const ProductDetails = () => {
       };
       get();
     }
+    window.scrollTo(0,0)
   }, [token]);
 
   useEffect(() => {
@@ -55,7 +57,7 @@ const ProductDetails = () => {
       <div className="container py-3 max-md:p-0 border-t-2 max-ls:max-w-none max-ls:px-0">
         {product == null ? (
           <div className="py-5 text-center">
-            <i className="fa fa-spin fa-circle-notch fa-2x"></i>
+            <i className="fa fa-spin fa-circle-notch text-5xl"></i>
           </div>
         ) : (
           <div className="grid max-md:grid-cols-1 grid-cols-2 mb-4">
@@ -70,7 +72,11 @@ const ProductDetails = () => {
                   />
                 </div>
                 {images.length > 0 && (
-                  <Swiper slidesPerView={window.innerWidth > 767 ? 4 : 1} modules={[Pagination]} pagination={{ clickable: true }}>
+                  <Swiper
+                    slidesPerView={window.innerWidth > 767 ? 4 : 1}
+                    modules={[Pagination]}
+                    pagination={{ clickable: true }}
+                  >
                     {images.map((image, index) => (
                       <SwiperSlide
                         key={index}
@@ -104,7 +110,9 @@ const ProductDetails = () => {
               <p className="text-gray-400 mb-10 max-md:mb-5 uppercase">
                 {product.sotuv_shakli}
               </p>
-              <h3 className="text-2xl max-sm:text-xl max-sm:font-normal capitalize font-bold">{product.title}</h3>
+              <h3 className="text-2xl max-sm:text-xl max-sm:font-normal capitalize font-bold">
+                {product.title}
+              </h3>
               <span className="font-[900] mt-2 inline-block text-lg bg-red-200 px-2 py-1">
                 {formatNumber(product.price)}
                 {(product.money_type.toLowerCase() == "евро" ||
@@ -141,8 +149,15 @@ const ProductDetails = () => {
                 <button className="uppercase bg-primary px-8 py-2 text-2xl max-sm:w-full text-white">
                   в корзину
                 </button>
-                <button className="text-3xl flex-shrink-0 bg-gray-100 px-3 py-2">
-                  <i className="fa-regular fa-heart"></i>
+                <button
+                  className="text-3xl flex-shrink-0 bg-gray-100 px-3 py-2"
+                  onClick={() => setLike(!like)}
+                >
+                  {like ? (
+                    <i className="fa text-red-500 fa-heart"></i>
+                  ) : (
+                    <i className="fa-regular fa-heart"></i>
+                  )}
                 </button>
               </div>
               <div className="mt-10">
@@ -196,7 +211,7 @@ const ProductDetails = () => {
         )}
       </div>
       <About />
-      <div className="border-b p-3 max-ls:px-3 bg-white container mt-10">
+      <div className="border-b p-3 max-ls:px-3 bg-white container mt-10 pb-20">
         <h3 className="text-2xl border-b pb-1 mb-4">описание</h3>
         <div
           dangerouslySetInnerHTML={{

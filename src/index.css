@@ -33,6 +33,20 @@ body{
   border: 1.5px solid #000 !important;
   transform: scale(2) !important;
 }
+html{
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar{
+  width: 5px;
+  background: #ddd;
+}
+::-webkit-scrollbar-button{
+  display: none;
+}
+::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background: #0CA145;
+}
 .swiper-pagination {
   bottom: 15px !important; 
 }
@@ -43,4 +57,7 @@ body{
 
 .navbar a:hover{
   color: #0FA245 !important;
+}
+.contact{
+  background: no-repeat url('./assets/contact-bg1.png') 100% 100% / 200px,no-repeat url('./assets/contact-bg2.png') 50px -50px / 200px,no-repeat url('./assets/contact-bg3.png') 75% 5% / 80px, #55C380;
 }

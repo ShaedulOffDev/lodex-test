@@ -4,24 +4,24 @@ const About = () => {
   return (
     <div className="bg-[#F7F8F7] text-center">
       <div className="container flex justify-center items-center py-10">
-        <ul className="grid justify-center grid-cols-5 max-lg:grid-cols-3 max-sm:grid-cols-2 max-[350px]:grid-cols-1 gap-12 items-center">
-          <li className="flex justify-center flex-col items-center gap-2">
+        <ul className="flex justify-center flex-wrap gap-12 items-center">
+          <li className="flex justify-center flex-col items-center gap-2 w-[200px]">
             <img src={AboutImage1} alt="about image" />
             <p className="font-[800] text-sm">Шоу-рум с хитами продаж!</p>
           </li>
-          <li className="flex justify-center flex-col items-center gap-2">
+          <li className="flex justify-center flex-col items-center gap-2 w-[200px]">
             <img src={AboutImage2} alt="about image" />
             <p className="font-[800] text-sm">Гарантия качества!</p>
           </li>
-          <li className="flex justify-center flex-col items-center gap-2">
+          <li className="flex justify-center flex-col items-center gap-2 w-[200px]">
             <img src={AboutImage3} alt="about image" />
             <p className="font-[800] text-sm">Нам доверяют!</p>
           </li>
-          <li className="flex justify-center flex-col items-center gap-2">
+          <li className="flex justify-center flex-col items-center gap-2 w-[200px]">
             <img src={AboutImage4} alt="about image" />
             <p className="font-[800] text-sm">Возврат и обмен без проблем!</p>
           </li>
-          <li className="flex justify-center flex-col items-center gap-2">
+          <li className="flex justify-center flex-col items-center gap-2 w-[200px]">
             <img src={AboutImage5} alt="about image" />
             <p className="font-[800] text-sm">С нами выгодно!</p>
           </li>

@@ -11,9 +11,9 @@ export const products = [
       "created_at": "2024-09-06T20:26:36+05:00",
       "category": "Transport",
       "sub_category": "Yengil avtomashinalar",
-      "is_favorite": false,
+      "is_favorite": true,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "Isuzu bartavoy sotiladi",
@@ -29,7 +29,7 @@ export const products = [
       "sub_category": "Yuk mashinalari",
       "is_favorite": false,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "UAZ bortvoy Gaz 21",
@@ -45,7 +45,7 @@ export const products = [
       "sub_category": "Yengil avtomashinalar",
       "is_favorite": false,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "Press aparat class",
@@ -109,7 +109,7 @@ export const products = [
       "sub_category": "Tirkamalar",
       "is_favorite": false,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "32,000$ Toyota 2009 Ideal sastayani",
@@ -125,7 +125,7 @@ export const products = [
       "sub_category": "Yengil avtomashinalar",
       "is_favorite": false,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "Ерёнгок арахис комбайн, Туркия, нархи 392 млн сум",
@@ -141,7 +141,7 @@ export const products = [
       "sub_category": "Qishloq xo'jalik texnikasi",
       "is_favorite": false,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "Pogruzchik sotiladi 1.8 kub",
@@ -205,7 +205,7 @@ export const products = [
       "sub_category": "Yuk mashinalari",
       "is_favorite": false,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "\"Active Foam Magic\" Grass",
@@ -219,9 +219,9 @@ export const products = [
       "created_at": "2024-09-06T20:25:36+05:00",
       "category": "Transport",
       "sub_category": "Avto ehtiyot qismlari va aksessuarlar",
-      "is_favorite": false,
+      "is_favorite": true,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "Задний Бампер + Задний Кузов от Hyundai Creta 2021 года, синего цвета.",
@@ -237,7 +237,7 @@ export const products = [
       "sub_category": "Avto ehtiyot qismlari va aksessuarlar",
       "is_favorite": false,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "Srochni sotiladi maskvich",
@@ -253,7 +253,7 @@ export const products = [
       "sub_category": "Yengil avtomashinalar",
       "is_favorite": false,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "235/55/17 yumsho balon Malibu Tracker Orlando",
@@ -267,9 +267,9 @@ export const products = [
       "created_at": "2024-09-06T20:25:33+05:00",
       "category": "Transport",
       "sub_category": "Shinalar, disklar va g'ildiraklar",
-      "is_favorite": false,
+      "is_favorite": true,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "Трактор CASE PUMA 155 тайёр_ (пума 155)",
@@ -317,7 +317,7 @@ export const products = [
       "sub_category": "Avto ehtiyot qismlari va aksessuarlar",
       "is_favorite": false,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "Авто жентра мокрый асфальт",
@@ -333,7 +333,7 @@ export const products = [
       "sub_category": "Yengil avtomashinalar",
       "is_favorite": false,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "Лазер планировщиклар, EFE ва FARMER фирмалари, Туркия, 220 млн сум",
@@ -349,7 +349,7 @@ export const products = [
       "sub_category": "Qishloq xo'jalik texnikasi",
       "is_favorite": false,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "Продается Колёсный Экскаватор UMG Е170W",
@@ -365,7 +365,7 @@ export const products = [
       "sub_category": "Maxsus texnika",
       "is_favorite": false,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "Авточехлы для всех видов машины",
@@ -413,7 +413,7 @@ export const products = [
       "sub_category": "Yengil avtomashinalar",
       "is_favorite": false,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "Сеялка пиёз сабзи экишга, Туркия ва Италия, нархи 135 млн сум",
@@ -429,7 +429,7 @@ export const products = [
       "sub_category": "Qishloq xo'jalik texnikasi",
       "is_favorite": false,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "Велоскутер янги охирги маркаси.",
@@ -445,7 +445,7 @@ export const products = [
       "sub_category": "Moto",
       "is_favorite": false,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "Tent urnatamz Labo changan gazel va boshqa turdagi barcha moshenalarga",
@@ -461,7 +461,7 @@ export const products = [
       "sub_category": "Yuk mashinalari",
       "is_favorite": false,
       "original_price": 32000,
-      "xit": true,
+      "xit": false,
   },
   {
       "title": "Комбайн мош ловия фасол учун, комбайн-подборщик, Туркия, 13000 доллар",
@@ -475,7 +475,7 @@ export const products = [
       "created_at": "2024-09-06T20:24:44+05:00",
       "category": "Transport",
       "sub_category": "Qishloq xo'jalik texnikasi",
-      "is_favorite": false,
+      "is_favorite": true,
       "original_price": 32000,
       "xit": true,
   }

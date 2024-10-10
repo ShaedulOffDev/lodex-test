@@ -4,18 +4,43 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useRef } from "react";
 
 const Landing = () => {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
   return (
-    <div className="max-w-[1920px] mx-auto">
+    <div className="max-w-[1920px] mx-auto relative">
+      <button
+        ref={prevRef}
+        className="absolute max-lg:hidden top-1/2 start-2 max-sm:start-0 cursor-pointer -translate-y-1/2 text-xl transition-all hover:text-primary z-[10] hover:bg-gray-200 px-3 py-2 rounded"
+      >
+        <i className="fa fa-arrow-left-long"></i>
+      </button>
+      <button
+        ref={nextRef}
+        className="absolute top-1/2 max-lg:hidden max-sm:end-0 end-2 cursor-pointer -translate-y-1/2 text-xl transition-all hover:text-primary z-[10] hover:bg-gray-200 px-3 py-2 rounded"
+      >
+        <i className="fa fa-arrow-right-long"></i>
+      </button>
       <Swiper
         slidesPerView={1}
         modules={[Navigation, Pagination]}
-        navigation={window.innerWidth > 1023}
+        onSwiper={(swiper) => {
+          if (swiper.params.navigation && prevRef.current && nextRef.current) {
+            const navigation = swiper.params.navigation;
+            if (typeof navigation === "object") {
+              navigation.prevEl = prevRef.current;
+              navigation.nextEl = nextRef.current;
+            }
+            swiper.navigation.init();
+            swiper.navigation.update();
+          }
+        }}
         pagination={{ clickable: true }}
       >
         <SwiperSlide
-          className={`w-full items-center pt-5 max-lg:flex-col flex justify-between bg-gradient-to-r from-light-green2 to-white`}
+          className={`cursor-pointer w-full items-center pt-5 max-lg:flex-col flex justify-between bg-gradient-to-r from-light-green2 to-white`}
         >
           <div className="w-1/2 max-lg:w-full overflow-hidden flex items-center max-xl:justify-center max-xl:p-0 justify-end pe-10 relative">
             <img
@@ -54,7 +79,7 @@ const Landing = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide
-          className={`w-full items-center pt-5 max-lg:flex-col flex justify-between bg-gradient-to-r from-light-green2 to-white`}
+          className={`cursor-pointer w-full items-center pt-5 max-lg:flex-col flex justify-between bg-gradient-to-r from-light-green2 to-white`}
         >
           <div className="w-1/2 max-lg:w-full overflow-hidden flex items-center max-xl:justify-center max-xl:p-0 justify-end pe-10 relative">
             <img
@@ -93,7 +118,7 @@ const Landing = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide
-          className={`w-full items-center pt-5 max-lg:flex-col flex justify-between bg-gradient-to-r from-light-green2 to-white`}
+          className={`cursor-pointer w-full items-center pt-5 max-lg:flex-col flex justify-between bg-gradient-to-r from-light-green2 to-white`}
         >
           <div className="w-1/2 max-lg:w-full overflow-hidden flex items-center max-xl:justify-center max-xl:p-0 justify-end pe-10 relative">
             <img
@@ -132,7 +157,7 @@ const Landing = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide
-          className={`w-full items-center pt-5 max-lg:flex-col flex justify-between bg-gradient-to-r from-light-green2 to-white`}
+          className={`cursor-pointer w-full items-center pt-5 max-lg:flex-col flex justify-between bg-gradient-to-r from-light-green2 to-white`}
         >
           <div className="w-1/2 max-lg:w-full overflow-hidden flex items-center max-xl:justify-center max-xl:p-0 justify-end pe-10 relative">
             <img
