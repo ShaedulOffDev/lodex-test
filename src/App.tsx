@@ -38,7 +38,7 @@ const App = () => {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/products/:token" element={<ProductDetails/>}/>
+        <Route path="/products/:id" element={<ProductDetails/>}/>
       </Routes>
       <Footer/>
       <button className={`fixed z-[99999] end-10 bottom-10 bg-gray-200 px-4 py-2 rounded text-xl text-primary opacity-50 hover:opacity-100 transition-all ${!isVisible && 'hidden'}`} onClick={() => window.scrollTo(0,0)}>

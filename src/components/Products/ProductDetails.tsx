@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ProductDetailsI } from "../../Types";
-import axios from "axios";
+import { ProductI } from "../../Types";
 import { SwiperSlide, Swiper } from "swiper/react";
 import Fancybox from "../Fancybox";
 import About from "../About";
@@ -9,43 +8,46 @@ import { Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 
 const ProductDetails = () => {
-  const { token } = useParams();
-  const [product, setProduct] = useState<ProductDetailsI | null>(null);
-  const [images, setImages] = useState<string[]>([]);
-  const [active, setActive] = useState<string>("");
-  const [like, setLike] = useState<boolean>(product ? product.is_favorite : false);
+  const { id } = useParams();
+  const choice = [false, true, false, false, false, false];
+  const [product, setProduct] = useState<ProductI | null>(null);
+  const images = [
+    product?.image || "https://picsum.photos/500?random=1",
+    "https://picsum.photos/500?random=2",
+    "https://picsum.photos/500?random=3",
+    "https://picsum.photos/500?random=4",
+    "https://picsum.photos/500?random=5",
+    "https://picsum.photos/500?random=6",
+  ];
+  const [active, setActive] = useState(
+    product?.image || "https://picsum.photos/500"
+  );
+  const [like, setLike] = useState<boolean>(
+    choice[Math.floor(Math.random() * choice.length)]
+  );
 
   useEffect(() => {
-    if (token) {
+    if (id) {
       const get = async () => {
-        const { data } = await axios.get(
-          `https://api.borgo.uz/en/api/product-detail/${token}`
-        );
-        setProduct(data);
+        try {
+          const res = await fetch(
+            `https://fakestoreapi.com/products/${id}`
+          ).then((res) => res.json());
+          setProduct(res);
+        } catch (error) {
+          console.log("API'da xatolik yuz berdi!");
+          return error;
+        }
       };
       get();
     }
-    window.scrollTo(0,0)
-  }, [token]);
-
+    window.scrollTo(0, 0);
+  }, [id]);
   useEffect(() => {
     if (product) {
-      if (product.image1) {
-        setImages((prev) => [...prev, product.image1]);
-        setActive(product.image1);
-      }
-      if (product.image2) {
-        setImages((prev) => [...prev, product.image2]);
-      }
-      if (product.image3) {
-        setImages((prev) => [...prev, product.image3]);
-      }
-      if (product.image4) {
-        setImages((prev) => [...prev, product.image4]);
-      }
+      setActive(product.image);
     }
   }, [product]);
-
   const activeHander = (image: string) => {
     setActive(image);
   };
@@ -63,10 +65,10 @@ const ProductDetails = () => {
           <div className="grid max-md:grid-cols-1 grid-cols-2 mb-4">
             <div className="w-full">
               <Fancybox>
-                <div className="bg-slate-100 w-full aspect-[16/13] mb-2 max-md:hidden">
+                <div className="bg-white w-full aspect-[16/13] mb-2 max-md:hidden">
                   <img
                     data-fancybox={window.innerWidth > 768 ? "gallery" : ""}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                     src={active}
                     alt="image"
                   />
@@ -95,7 +97,7 @@ const ProductDetails = () => {
                                   : ""
                                 : "gallery"
                             }
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-contain"
                             src={image}
                             alt="image"
                           />
@@ -108,21 +110,13 @@ const ProductDetails = () => {
             </div>
             <div className="w-full p-5 max-md:px-0 max-ls:p-3 text-center max-md:pt-5 pt-10">
               <p className="text-gray-400 mb-10 max-md:mb-5 uppercase">
-                {product.sotuv_shakli}
+                {product.category}
               </p>
               <h3 className="text-2xl max-sm:text-xl max-sm:font-normal capitalize font-bold">
                 {product.title}
               </h3>
               <span className="font-[900] mt-2 inline-block text-lg bg-red-200 px-2 py-1">
-                {formatNumber(product.price)}
-                {(product.money_type.toLowerCase() == "евро" ||
-                  product.money_type == "euro") &&
-                  " y.e."}
-                <span className="inline-block ms-1">
-                  {product.money_type.toLowerCase() != "евро" &&
-                    product.money_type != "euro" &&
-                    product.money_type}
-                </span>
+                ${formatNumber(product.price)}
               </span>
               <p className="text-red-500 mt-4">
                 🔥 Черная пятница: скидка действует до 28 ноября

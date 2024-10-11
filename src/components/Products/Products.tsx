@@ -67,7 +67,7 @@ const Products: FC<PropsTypes> = ({ products, title }) => {
       >
         {products.length ? (
           products.map((p) => (
-            <SwiperSlide key={p.token}>
+            <SwiperSlide key={p.id}>
               <ProductCard product={p} />
             </SwiperSlide>
           ))
