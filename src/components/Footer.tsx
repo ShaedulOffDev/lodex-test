@@ -1,3 +1,5 @@
+import { Dpd, MasterCard, Mir, Pochta, Visa } from "../assets";
+
 const Footer = () => {
   return (
     <div>
@@ -571,6 +573,34 @@ const Footer = () => {
                     Рейтинг в Google
                   </span>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-white py-3">
+        <div className="container flex justify-between items-center gap-3 max-lg:flex-wrap">
+          <p className="text-sm xl:text-base">
+            ©2021 интернет-магазин детской функциональной одежды <br />Диномама.ру
+          </p>
+          <div className="flex gap-5 max-xl:flex-col max-xl:gap-0 text-[#0CA145] text-sm xl:text-base">
+            <a href="#">Защита персональных данных</a>
+            <a href="#">Публичная оферта</a>
+          </div>
+          <div className="flex gap-6">
+            <div>
+              <p className="text-sm">Мы принимаем:</p>
+              <div className="flex gap-2 items-center mt-2">
+                <img src={Visa} alt="visa" />
+                <img src={Mir} alt="Mir" />
+                <img src={MasterCard} alt="MasterCard" />
+              </div>
+            </div>
+            <div>
+              <p className="text-sm">Мы принимаем:</p>
+              <div className="flex gap-2 items-center mt-2">
+                <img src={Pochta} alt="pochta" />
+                <img src={Dpd} alt="dpd" />
               </div>
             </div>
           </div>
